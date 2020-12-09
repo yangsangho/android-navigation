@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_home"
+        android:title="홈" />
+    <item
+        android:id="@+id/nav_dose"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_dose_schedule"
+        android:title="복약일정" />
+    <item
+        android:id="@+id/nav_prescription"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_prescription"
+        android:title="처방전" />
+    <item
+        android:id="@+id/nav_health"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_health"
+        android:title="건강체크" />
+</menu>
