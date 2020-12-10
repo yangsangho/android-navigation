@@ -16,6 +16,7 @@ package com.example.practice_navigation
  * limitations under the License.
  */
 import android.content.Intent
+import android.util.Log
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -25,6 +26,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /**
  * Manages the various graphs needed for a [BottomNavigationView].
@@ -35,7 +38,8 @@ fun BottomNavigationView.setupWithNavController(
     navGraphIds: List<Int>,
     fragmentManager: FragmentManager,
     containerId: Int,
-    intent: Intent
+    intent: Intent,
+    popAction: (() -> Boolean) -> Unit
 ): LiveData<NavController> {
 
     // Map of tags
@@ -126,6 +130,13 @@ fun BottomNavigationView.setupWithNavController(
                 selectedItemTag = newlySelectedItemTag
                 isOnFirstFragment = selectedItemTag == firstFragmentTag
                 selectedNavController.value = selectedFragment.navController
+
+                // 바텀 탭 선택되면, 항상 start fragment로 이동하도록
+                popAction.invoke {
+                    selectedFragment.navController.popBackStack(
+                        selectedFragment.navController.graph.startDestination, false
+                    )
+                }
                 true
             } else {
                 false

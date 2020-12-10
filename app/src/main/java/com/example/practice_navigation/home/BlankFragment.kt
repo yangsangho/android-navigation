@@ -20,6 +20,9 @@ class BlankFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_blankFragment_to_otherFragment)
         }
+        binding.btnNext2.setOnClickListener {
+            findNavController().navigate(R.id.action_blankFragment2_to_otherFragment2)
+        }
     }
 
     override fun onCreateView(

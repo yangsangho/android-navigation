@@ -9,5 +9,21 @@
         android:id="@+id/doseFragment"
         android:name="com.example.practice_navigation.dose.DoseFragment"
         android:label="DoseFragment"
-        tools:layout="@layout/fragment_dose" />
+        tools:layout="@layout/fragment_dose" >
+        <action
+            android:id="@+id/action_doseFragment_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.practice_navigation.home.BlankFragment"
+        android:label="BlankFragment" >
+        <action
+            android:id="@+id/action_blankFragment2_to_otherFragment2"
+            app:destination="@id/otherFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherFragment2"
+        android:name="com.example.practice_navigation.home.OtherFragment"
+        android:label="OtherFragment" />
 </navigation>
