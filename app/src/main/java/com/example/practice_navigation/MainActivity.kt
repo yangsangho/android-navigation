@@ -5,17 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.practice_navigation.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -48,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             R.navigation.nav_health
         )
         val controller = binding.bottom.setupWithNavController(
-            navGraphIdList, supportFragmentManager, R.id.nhf, intent
+            navGraphIdList, supportFragmentManager, R.id.nav_host, intent
         ) { GlobalScope.launch { runOnUiThread { it.invoke() } } }
         controller.observe(this) {
             setupActionBarWithNavController(it)
