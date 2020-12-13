@@ -17,7 +17,10 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(LayoutInflater.from(requireContext()), null, false)
 
         binding.btnGoBlank.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_blankFragment)
+            // safe args - 종속성 추가 후, rebuild해야 사용 가능
+            val action =
+                HomeFragmentDirections.actionHomeFragmentToBlankFragment("홈에서 출발했어요")
+            findNavController().navigate(action)
         }
     }
 

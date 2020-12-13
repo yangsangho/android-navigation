@@ -17,7 +17,7 @@ class DoseFragment: Fragment() {
         binding = FragmentDoseBinding.inflate(LayoutInflater.from(requireContext()), null, false)
 
         binding.btnGoBlank.setOnClickListener {
-            findNavController().navigate(R.id.action_doseFragment_to_blankFragment2)
+            findNavController().navigate(R.id.action_doseFragment_to_blankFragment)
         }
     }
 

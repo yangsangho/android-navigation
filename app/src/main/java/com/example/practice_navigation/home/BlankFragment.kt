@@ -8,20 +8,24 @@ import android.view.ViewGroup
 import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.practice_navigation.R
 import com.example.practice_navigation.databinding.FragmentBlankBinding
 
 class BlankFragment : Fragment() {
     private lateinit var binding: FragmentBlankBinding
 
+    val args: BlankFragmentArgs by navArgs()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentBlankBinding.inflate(LayoutInflater.from(requireContext()), null, false)
+
+        val msg = args.msg
+        binding.msg = msg
+
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_blankFragment_to_otherFragment)
-        }
-        binding.btnNext2.setOnClickListener {
-            findNavController().navigate(R.id.action_blankFragment2_to_otherFragment2)
         }
     }
 

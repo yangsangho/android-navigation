@@ -21,6 +21,10 @@
         <action
             android:id="@+id/action_blankFragment_to_otherFragment"
             app:destination="@id/otherFragment" />
+        <argument
+            android:name="msg"
+            android:defaultValue="default"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/otherFragment"

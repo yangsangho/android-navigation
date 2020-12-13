@@ -11,19 +11,23 @@
         android:label="DoseFragment"
         tools:layout="@layout/fragment_dose" >
         <action
-            android:id="@+id/action_doseFragment_to_blankFragment2"
-            app:destination="@id/blankFragment2" />
+            android:id="@+id/action_doseFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment2"
+        android:id="@+id/blankFragment"
         android:name="com.example.practice_navigation.home.BlankFragment"
         android:label="BlankFragment" >
         <action
-            android:id="@+id/action_blankFragment2_to_otherFragment2"
-            app:destination="@id/otherFragment2" />
+            android:id="@+id/action_blankFragment_to_otherFragment"
+            app:destination="@id/otherFragment" />
+        <argument
+            android:name="msg"
+            android:defaultValue="default"
+            app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/otherFragment2"
+        android:id="@+id/otherFragment"
         android:name="com.example.practice_navigation.home.OtherFragment"
         android:label="OtherFragment" />
 </navigation>
