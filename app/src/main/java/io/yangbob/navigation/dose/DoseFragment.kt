@@ -1,4 +1,4 @@
-package com.example.practice_navigation.dose
+package io.yangbob.navigation.dose
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.practice_navigation.R
-import com.example.practice_navigation.databinding.FragmentDoseBinding
+import io.yangbob.navigation.R
+import io.yangbob.navigation.databinding.FragmentDoseBinding
 
 class DoseFragment: Fragment() {
     private lateinit var binding: FragmentDoseBinding

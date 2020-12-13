@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/prescriptionFragment"
-        android:name="com.example.practice_navigation.prescription.PrescriptionFragment"
+        android:name="io.yangbob.navigation.prescription.PrescriptionFragment"
         android:label="PrescriptionFragment"
         tools:layout="@layout/fragment_prescription" />
 </navigation>

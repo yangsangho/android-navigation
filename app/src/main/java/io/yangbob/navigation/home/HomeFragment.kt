@@ -1,4 +1,4 @@
-package com.example.practice_navigation.home
+package io.yangbob.navigation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.practice_navigation.R
-import com.example.practice_navigation.databinding.FragmentHomeBinding
+import io.yangbob.navigation.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding

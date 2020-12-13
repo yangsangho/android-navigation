@@ -1,4 +1,4 @@
-package com.example.practice_navigation
+package io.yangbob.navigation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.practice_navigation.databinding.ActivityMainBinding
+import io.yangbob.navigation.databinding.ActivityMainBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 

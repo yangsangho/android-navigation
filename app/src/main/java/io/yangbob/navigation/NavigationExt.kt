@@ -1,4 +1,4 @@
-package com.example.practice_navigation
+package io.yangbob.navigation
 
 /*
  * Copyright 2019, The Android Open Source Project
@@ -16,7 +16,6 @@ package com.example.practice_navigation
  * limitations under the License.
  */
 import android.content.Intent
-import android.util.Log
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -26,8 +25,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 /**
  * Manages the various graphs needed for a [BottomNavigationView].

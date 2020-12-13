@@ -1,11 +1,11 @@
-package com.example.practice_navigation.prescription
+package io.yangbob.navigation.prescription
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.practice_navigation.databinding.FragmentPrescriptionBinding
+import io.yangbob.navigation.databinding.FragmentPrescriptionBinding
 
 class PrescriptionFragment : Fragment() {
     private lateinit var binding: FragmentPrescriptionBinding

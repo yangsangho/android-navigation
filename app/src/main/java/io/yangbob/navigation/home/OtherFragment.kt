@@ -1,18 +1,18 @@
-package com.example.practice_navigation.health
+package io.yangbob.navigation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.practice_navigation.databinding.FragmentHealthBinding
+import io.yangbob.navigation.databinding.FragmentOtherBinding
 
-class HealthFragment : Fragment() {
-    private lateinit var binding: FragmentHealthBinding
+class OtherFragment : Fragment() {
+    private lateinit var binding: FragmentOtherBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentHealthBinding.inflate(LayoutInflater.from(requireContext()), null, false)
+        binding = FragmentOtherBinding.inflate(LayoutInflater.from(requireContext()), null, false)
     }
 
     override fun onCreateView(

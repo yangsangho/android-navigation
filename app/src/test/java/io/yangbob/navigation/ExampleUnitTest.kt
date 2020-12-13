@@ -1,4 +1,4 @@
-package com.example.practice_navigation
+package io.yangbob.navigation
 
 import org.junit.Test
 
