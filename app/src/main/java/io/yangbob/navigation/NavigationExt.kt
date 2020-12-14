@@ -38,7 +38,8 @@ fun BottomNavigationView.setupWithNavController(
     fragmentManager: FragmentManager,
     containerId: Int,
     intent: Intent,
-    popAction: (() -> Boolean) -> Unit
+    setAppbarTitle: (String?) -> Unit,
+    setPopAction: (() -> Boolean) -> Unit
 ): LiveData<NavController> {
 
     // Map of tags
@@ -59,6 +60,10 @@ fun BottomNavigationView.setupWithNavController(
             navGraphId,
             containerId
         )
+
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            setAppbarTitle(destination.label?.toString())
+        }
 
         // Obtain its id
         val graphId = navHostFragment.navController.graph.id
@@ -131,7 +136,7 @@ fun BottomNavigationView.setupWithNavController(
                 selectedNavController.value = selectedFragment.navController
 
                 // 바텀 탭 선택되면, 항상 start fragment로 이동하도록
-                popAction.invoke {
+                setPopAction.invoke {
                     selectedFragment.navController.popBackStack(
                         selectedFragment.navController.graph.startDestination, false
                     )
