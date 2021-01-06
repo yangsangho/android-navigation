@@ -61,12 +61,11 @@ class MainActivity : AppCompatActivity() {
             fragmentManager = supportFragmentManager,
             containerId = R.id.nav_host,
             intent = intent,
-            setAppbarTitle = { title -> binding.tvTitle.text = title },
-            setPopAction = { popAction -> GlobalScope.launch { runOnUiThread { popAction.invoke() } } }
-            // setPopAction으로 탭 이동시 firstDestination으로 움직이는 것보다
-            // 애초에 화면 구성을 화면 전환 시 탭이 보이지 않도록 하는 방식으로 구성하는 것이 좋을 것 같다.
-            // todo 화면 이동시 BottomNavigationView show & hide 자연스럽게 되나? (공식 가이드 있었음)
+            setAppbarTitle = { title -> binding.tvTitle.text = title }
         )
+        // setPopAction으로 탭 이동시 firstDestination으로 움직이는 것보다
+        // 애초에 화면 구성을 화면 전환 시 탭이 보이지 않도록 하는 방식으로 구성하는 것이 좋을 것 같다.
+        // todo 화면 이동시 BottomNavigationView show & hide 자연스럽게 되나? (공식 가이드 있었음)
 
         controller.observe(this) {
             // NavHost(NavController) 바뀔 때마다, 새로 appbar와 연동

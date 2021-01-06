@@ -38,8 +38,7 @@ fun BottomNavigationView.setupWithNavController(
     fragmentManager: FragmentManager,
     containerId: Int,
     intent: Intent,
-    setAppbarTitle: (String?) -> Unit,
-    setPopAction: (() -> Boolean) -> Unit
+    setAppbarTitle: (String?) -> Unit
 ): LiveData<NavController> {
 
     // Map of tags
@@ -134,13 +133,6 @@ fun BottomNavigationView.setupWithNavController(
                 selectedItemTag = newlySelectedItemTag
                 isOnFirstFragment = selectedItemTag == firstFragmentTag
                 selectedNavController.value = selectedFragment.navController
-
-                // 바텀 탭 선택되면, 항상 start fragment로 이동하도록
-                setPopAction.invoke {
-                    selectedFragment.navController.popBackStack(
-                        selectedFragment.navController.graph.startDestination, false
-                    )
-                }
                 true
             } else {
                 false
