@@ -18,6 +18,7 @@ package io.yangbob.navigation
  * limitations under the License.
  */
 import android.content.Intent
+import android.util.Log
 import android.util.SparseArray
 import androidx.core.util.forEach
 import androidx.core.util.set
@@ -38,7 +39,9 @@ fun BottomNavigationView.setupWithNavController(
     fragmentManager: FragmentManager,
     containerId: Int,
     intent: Intent,
-    setAppbarTitle: (String?) -> Unit
+    setAppbarTitle: (String?) -> Unit,
+    setVisibilityBottomNav: (Boolean) -> Unit,
+    setVisibilityAppbar: (Boolean) -> Unit
 ): LiveData<NavController> {
 
     // Map of tags
@@ -60,8 +63,30 @@ fun BottomNavigationView.setupWithNavController(
             containerId
         )
 
+        // 각 Navigation 마다, 1개의 navController가 있고, 그 각각에 addListener
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
+            // 가운데에 있는 appbar title 설정하는 로직 추가
+            Log.d("yangbob", "addOnDestinationChangedListener : ${destination.id}")
             setAppbarTitle(destination.label?.toString())
+
+            // appbar 및 bottom hide & show 로직 추가
+            when (destination.id) {
+                R.id.blankFragment -> {
+                    Log.i("yangbob", "addOnDestinationChangedListener - R.id.blankFragment")
+                    setVisibilityAppbar(false)
+                    setVisibilityBottomNav(false)
+                }
+                R.id.homeFragment -> {
+                    Log.i("yangbob", "addOnDestinationChangedListener - R.id.homeFragment")
+                    setVisibilityAppbar(true)
+                    setVisibilityBottomNav(true)
+                }
+                R.id.doseFragment -> {
+                    Log.i("yangbob", "addOnDestinationChangedListener - R.id.doseFragment")
+                    setVisibilityAppbar(true)
+                    setVisibilityBottomNav(true)
+                }
+            }
         }
 
         // Obtain its id

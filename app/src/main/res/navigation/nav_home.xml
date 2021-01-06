@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        tools:layout="@layout/fragment_home"
         android:name="io.yangbob.navigation.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_blankFragment"
             app:destination="@id/blankFragment" />
@@ -17,7 +17,8 @@
     <fragment
         android:id="@+id/blankFragment"
         android:name="io.yangbob.navigation.home.BlankFragment"
-        android:label="BlankFragment" >
+        android:label="BlankFragment"
+        tools:layout="@layout/fragment_blank">
         <action
             android:id="@+id/action_blankFragment_to_otherFragment"
             app:destination="@id/otherFragment" />
@@ -29,5 +30,6 @@
     <fragment
         android:id="@+id/otherFragment"
         android:name="io.yangbob.navigation.home.OtherFragment"
-        android:label="OtherFragment" />
+        android:label="OtherFragment"
+        tools:layout="@layout/fragment_other" />
 </navigation>
